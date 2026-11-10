@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docs Update"
+  short_description: "Plan-first gate for documentation updates"
+  default_prompt: "Use $docs-update before changing documentation: list docs to add or update, show the proposed documentation diff, and wait for 1 or 2 before editing files."

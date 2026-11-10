@@ -1,0 +1,4 @@
+interface:
+  display_name: "NestJS Patterns"
+  short_description: "Nest modules, DI, validation, and lifecycle"
+  default_prompt: "Use $nestjs-patterns to diagnose or implement a scoped NestJS change using the project's existing conventions."

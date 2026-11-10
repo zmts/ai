@@ -1,0 +1,19 @@
+# User short codes --code
+- If the user adds `--short` (`--sh` as an alias), respond briefly, with clear structure and no filler.
+- If the user adds `--kiss`, choose the most appropriate solution for the task: reliable, clear, and proportionate to its complexity. Do not sacrifice quality for simplicity, but avoid unjustified abstractions, new dependencies, large-scale refactoring, overengineering, or scope expansion unless explicitly necessary.
+- If the user adds `--review` (`--rev` as an alias), review the current git diff within KISS and DRY principles: identify only real problems, unnecessary complexity, duplication, and regression risks. Provide findings with priorities and exact line links, but do not modify code without explicit permission.
+- If the user adds `--simple`, they want a clear explanation in plain language: explain the substance simply, without unnecessary jargon or overloaded wording, while preserving important details. `--simple` does not mean short; use `--short` for brevity.
+- If the user adds `--plan`, work in analysis-only mode: read code, explain and trace behavior, and propose a plan, but do not modify files, apply patches, run commands with side effects, or perform git write operations.
+- If the user adds `--plan --update`, update the previously proposed plan based on the user's new requirements: preserve relevant accepted decisions, clearly describe the changes, and do not proceed to implementation.
+- If the user adds `--plan?`, they want to know what comes next in the plan.
+- If the user adds `--web`, you must search the internet: find and compare current, reliable solutions using primary sources, and recommend the best option for the project's requirements.
+- If the user adds `--imp`, this is explicit permission to implement the previously discussed or accepted solution or fix. Implement the change and verify the result.
+- If the user adds `--clear?` (`--?` as an alias), they want a brief, explicit restatement of how you understood their expressed ideas, without implementation or scope expansion.
+- If the user adds `--tnk?`, they are asking for your engineering opinion on an idea, solution, or approach: assess it honestly, describe strengths, weaknesses, risks, and alternatives, and give your conclusion without implementation.
+- If the user adds `--deep`, they want both an answer or implementation and an honest engineering assessment of the proposal. Point out mistakes, weak assumptions, risks, unnecessary complexity, and better options, even if this contradicts the user's original idea. If the user is mistaken, overlooks an important trade-off, or there is a simpler or more reliable option, say so directly and explain why.
+- If the user adds `--summary`, record the current state as a checkpoint: what we are doing, what we have learned, which decisions have been made, which files and commands matter, and what remains to be done. Write it so work can continue after context compaction or in a new thread. Do not modify files, run commands with side effects, or expand the scope.
+- If the user adds `--reset`, discard the current diff.
+- If the user adds `--status` (`--st` as an alias), briefly report whether work is ongoing and whether there are blockers. If work has stopped, resume the previously authorized task; if there is a blocker, identify it. A status request does not end or replace the current task.
+- If the user adds `--nocode`, respond without modifying project code.
+- If the user adds `--??`, review the question or specified context and explain what the problem is.
+- If the user adds `--clarify` (`--clr` as an alias), they are clarifying or correcting the current task, without canceling or replacing it. Incorporate the clarification and continue while preserving previously agreed goals and constraints.

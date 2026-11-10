@@ -1,0 +1,4 @@
+interface:
+  display_name: "Node.js Pro"
+  short_description: "Node.js services, IO, and runtime correctness"
+  default_prompt: "Use $nodejs-pro to diagnose or implement a scoped Node.js backend fix with explicit resource ownership and service contracts."

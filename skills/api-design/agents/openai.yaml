@@ -1,0 +1,4 @@
+interface:
+  display_name: "API Design"
+  short_description: "API contracts, compatibility, and failure semantics"
+  default_prompt: "Use $api-design to design or review an API contract with explicit compatibility and failure behavior."

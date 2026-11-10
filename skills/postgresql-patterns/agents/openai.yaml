@@ -1,0 +1,4 @@
+interface:
+  display_name: "PostgreSQL Patterns"
+  short_description: "SQL correctness, query plans, and PostgreSQL design"
+  default_prompt: "Use $postgresql-patterns to analyze or improve PostgreSQL SQL while preserving result semantics and the authorized execution scope."

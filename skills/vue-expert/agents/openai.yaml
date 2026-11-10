@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vue Expert"
+  short_description: "Vue reactivity, components, and async lifecycle"
+  default_prompt: "Use $vue-expert to diagnose or implement a scoped Vue reactivity, component-contract or async lifecycle change."

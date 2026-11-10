@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pinia Patterns"
+  short_description: "Store ownership, reactivity, reset, and isolation"
+  default_prompt: "Use $pinia-patterns to diagnose or implement a scoped Pinia state change with explicit ownership and lifecycle."

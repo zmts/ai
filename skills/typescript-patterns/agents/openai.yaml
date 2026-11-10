@@ -1,0 +1,4 @@
+interface:
+  display_name: "TypeScript Patterns"
+  short_description: "Type contracts, narrowing, and generic inference"
+  default_prompt: "Use $typescript-patterns to resolve a type-contract or inference issue without unnecessary abstractions."

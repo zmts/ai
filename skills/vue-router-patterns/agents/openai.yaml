@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vue Router Patterns"
+  short_description: "Navigation, guards, params, and URL state"
+  default_prompt: "Use $vue-router-patterns to diagnose or implement a scoped navigation change while preserving URL and state contracts."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Gate"
+  short_description: "Review, plan, and confirm commits"
+  default_prompt: "Use $commit-gate to inspect local git changes and show a commit plan and message. Wait for explicit approval by default; with --auto, select the most suitable message using the existing format and execute without a menu choice. Use --api or --ui to select backend or frontend scope, --all to include the full selected scope, and --exclude to omit one or more files or folders. Use --aa as an alias for --all --auto."

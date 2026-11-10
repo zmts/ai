@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Developer"
+  short_description: "Scoped frontend implementation skill"
+  default_prompt: "Use $frontend-developer to implement a scoped frontend change or UI bug fix with production-quality behavior."

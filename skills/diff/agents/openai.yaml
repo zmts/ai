@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diff"
+  short_description: "Explain local changes by scope"
+  default_prompt: "Use $diff to inspect local git changes and summarize them in plain language by meaningful change group. Use --ui for frontend/UI, --api for API/backend, and --all or no key for every relevant workspace scope. Add --files when clickable affected file links are needed."

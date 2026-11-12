@@ -16,11 +16,13 @@ Resolve Node.js runtime and service problems within the existing architecture.
 3. Apply the smallest coherent fix. Verify the changed path, a relevant failure path and integration behavior where practical.
 4. Report behavior changes, checks actually performed and material verification limits.
 
-Use javascript-patterns for substantive promise/module/value issues and typescript-patterns for substantive type-system issues, if available. Load only skills warranted by the problem; routine backend edits do not need all three. Framework-specific frontend behavior belongs with its framework skill.
+Use [javascript-patterns-registry](../javascript-patterns-registry/SKILL.md#language-diagnosis-references) for substantive promise/module/value issues and typescript-patterns for substantive type-system issues, if available. Load only skills warranted by the problem; routine backend edits do not need all three. Framework-specific frontend behavior belongs with its framework skill.
 
 For NestJS-specific modules, DI or request lifecycle, prefer nestjs-patterns if available. Read the references below only for the affected backend concern; generic service guidance does not require a separate framework or architecture migration.
 
 ## References by task
+
+When a concrete pattern choice needs examples, use [javascript-patterns-registry](../javascript-patterns-registry/SKILL.md). Read only the linked section or entry relevant to the task; check its applicability and simpler alternative before introducing a pattern.
 
 | Concern | Reference |
 |---|---|
@@ -29,6 +31,9 @@ For NestJS-specific modules, DI or request lifecycle, prefer nestjs-patterns if 
 | Connection pools, transaction ownership and release | [Database lifecycle](references/database-lifecycle.md) |
 | Workers, retries, cancellation and delivery semantics | [Jobs and workers](references/jobs-and-workers.md) |
 | Readiness, draining, signals and ordered cleanup | [Shutdown](references/shutdown.md) |
+| Pool leases, retained memory and subscription cleanup examples | [Memory sharing and resource management](../javascript-patterns-registry/references/js-patterns-registry.md#3-memory-sharing-and-resource-management) |
+| Error ownership, safe retries and process shutdown examples | [Errors and recovery](../javascript-patterns-registry/references/js-patterns-registry.md#6-errors-and-recovery) |
+| FIFO work queues and bounded cache eviction examples | [Queue / FIFO](../javascript-patterns-registry/references/js-patterns-registry.md#queue--fifo), [LRU Cache](../javascript-patterns-registry/references/js-patterns-registry.md#lru-cache) |
 | Pinned sources and adaptation decisions | [Sources](references/sources.md) |
 
 ## Service and resource correctness

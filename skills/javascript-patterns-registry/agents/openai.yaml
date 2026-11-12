@@ -1,0 +1,4 @@
+interface:
+  display_name: "JavaScript Patterns Registry"
+  short_description: "JavaScript behavior diagnosis and pattern selection"
+  default_prompt: "Use $javascript-patterns-registry to diagnose a JavaScript behavior issue or choose a suitable pattern with the simplest compatible solution."

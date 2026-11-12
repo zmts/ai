@@ -15,5 +15,5 @@
 - If the user adds `--reset`, discard the current diff.
 - If the user adds `--status` (`--st` as an alias), briefly report whether work is ongoing and whether there are blockers. If work has stopped, resume the previously authorized task; if there is a blocker, identify it. A status request does not end or replace the current task.
 - If the user adds `--nocode`, respond without modifying project code.
-- If the user adds `--??`, review the question or specified context and explain what the problem is.
+  If the user adds --??, review the question or provided context, explain the problem, and suggest possible solutions.
 - If the user adds `--clarify` (`--clr` as an alias), they are clarifying or correcting the current task, without canceling or replacing it. Incorporate the clarification and continue while preserving previously agreed goals and constraints.

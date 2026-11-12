@@ -22,3 +22,13 @@ Use documentation for the target PostgreSQL major; current links can move to a n
 Structural validation passed for frontmatter, UI metadata, local references and fenced examples. Both documented SQL examples executed with expected rows in a disposable PostgreSQL 17.11 container. Additional checks covered NULL/NOT IN versus NOT EXISTS, exact numeric arithmetic, a Europe/Kyiv DST day boundary, rollback, conditional UPDATE, primary-key/CHECK/NOT NULL rejection and EXPLAIN ANALYZE JSON parsing.
 
 The isolated container had no project data mounts or exposed ports and was removed after testing. No project database connection was made. Its configured image is not evidence of the live server major. Multi-version behavior, concurrent-session races, RLS policy enforcement and production DDL/lock impact were not integration-tested.
+
+## Reference expansion — 2026-11-12
+
+Local version 1.1.0 adds English versions of the four PostgreSQL cheatsheets maintained in the repository's `info/` directory: data modeling/JOINs, indexes, transactions and locks. The Russian originals remain unchanged. SQL statements are retained; comments, explanations and navigation are translated.
+
+The separate short plan/index and concurrency references are consolidated into the index and lock cheatsheets. Their unique safeguards remain: execution boundaries and plan interpretation, prepared-plan limitations, evidence-based performance claims, bounded retry, lock starvation and distinct timeout scopes. SQL correctness, types/time, schema/migrations and access references remain separate because they cover additional concerns.
+
+Version-sensitive index and lock details were checked against PostgreSQL 18 primary documentation. Source links using `current` still need to be matched to the actual server major. Index naming is an illustrative project convention, not a global requirement. SQL examples are alternatives, not a single sequential migration.
+
+Validation for this expansion is recorded separately from the earlier container tests above: translation coverage, unchanged Russian originals and SQL statement bodies, local links/anchors, skill structure and SQL parsing. No live database, DDL, maintenance or concurrent-session workload is required for these documentation checks.

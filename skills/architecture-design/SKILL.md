@@ -27,10 +27,15 @@ Choose the smallest structure that meets the actual constraints. Keeping the cur
 
 ## References by decision
 
+When a concrete pattern choice needs examples, use [javascript-patterns-registry](../javascript-patterns-registry/SKILL.md). Read only the linked section or entry relevant to the task; check its applicability and simpler alternative before introducing a pattern.
+
 | Decision | Reference |
 |---|---|
 | Existing architecture review, module interfaces and refactor scope | [Boundaries and review](references/boundaries-and-review.md) |
 | Code/component pattern selection and simpler alternatives | [Pattern selection](references/pattern-selection.md) |
+| Object creation, shared instances and state scope examples | [Object creation and state scope](../javascript-patterns-registry/references/js-patterns-registry.md#1-object-creation-and-state-scope) |
+| Interface boundaries, delegation and behavioral variation examples | [Interface boundaries, composition and behavior management](../javascript-patterns-registry/references/js-patterns-registry.md#2-interface-boundaries-composition-and-behavior-management) |
+| Dependency direction, domain/system separation and ownership examples | [Code organization and data ownership](../javascript-patterns-registry/references/js-patterns-registry.md#7-code-organization-and-data-ownership) |
 | Outbox, idempotency, failure recovery and distributed boundaries | [Consistency and reliability](references/consistency-and-reliability.md) |
 | Alternatives, migration and decision records | [Decisions and migration](references/decisions-and-migration.md) |
 | Pinned sources and local adaptations | [Sources](references/sources.md) |

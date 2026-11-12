@@ -2,7 +2,7 @@
 
 Updated 2026-10-20 under the approved JavaScript/TypeScript split. This is a local revision; the prior skill had no recorded upstream origin.
 
-- Moved language-level async/module/value guidance into javascript-patterns.
+- Moved language-level async/module/value guidance into a dedicated language skill; it is now consolidated in [javascript-patterns-registry](../../javascript-patterns-registry/SKILL.md#language-diagnosis-references) as of 2026-11-12.
 - Moved narrowing, inference, type-only imports and static/runtime contract guidance into typescript-patterns.
 - Retained measured-unit naming, public module boundaries, scoped changes and meaningful error handling.
 - Replaced frontend-wide activation with Node service/runtime scope. Resolve API disagreement by inspecting the contract and both sides.

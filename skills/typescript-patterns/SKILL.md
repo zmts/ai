@@ -16,7 +16,7 @@ Make static contracts reflect runtime truth with the simplest adequate types.
 3. Read only the relevant reference below. Prefer inference, narrowing and built-in utilities before generic machinery.
 4. Check valid and meaningful invalid usage using project compiler/test commands. External data and changed behavior also need runtime verification. Analysis-only requests remain read-only.
 
-Keep `nodejs-pro` for Node service/runtime issues and the Vue skill for reactivity/lifecycle. Load `javascript-patterns` only for a separate JS semantics issue, if available. A .ts extension alone does not warrant this skill.
+Keep `nodejs-pro` for Node service/runtime issues and the Vue skill for reactivity/lifecycle. Load [javascript-patterns-registry](../javascript-patterns-registry/SKILL.md#language-diagnosis-references) only for a separate JS semantics issue, if available. A .ts extension alone does not warrant this skill.
 
 ## Contract rules
 

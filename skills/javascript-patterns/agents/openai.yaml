@@ -1,4 +1,0 @@
-interface:
-  display_name: "JavaScript Patterns"
-  short_description: "Async, modules, and JavaScript runtime semantics"
-  default_prompt: "Use $javascript-patterns to diagnose a JavaScript behavior issue and apply the smallest compatible fix."

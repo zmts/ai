@@ -138,7 +138,7 @@ Maintain a persistent checkpoint when the task involves multiple iterations, sig
 
 Store checkpoints under the repository root:
 
-`.codex/iterate-gate/<task-id>.md`
+`.iterate-gate/<task-id>.md`
 
 Derive a stable, collision-resistant task ID from the source document path and task scope.
 
@@ -152,7 +152,7 @@ When a checkpoint is required:
 4. Only if an exclusion is needed, resolve the repository-local exclude file using `git rev-parse --git-path info/exclude` and append the following rule without duplicating an existing entry:
 
    ```gitignore
-   /.codex/iterate-gate/
+   /.iterate-gate/
    ```
 
 5. Create the checkpoint directory under the repository root and confirm the intended checkpoint path is ignored using `git check-ignore`.

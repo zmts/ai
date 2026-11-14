@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterate Gate"
+  short_description: "Review and fix implementation against document requirements"
+  default_prompt: "Use $iterate-gate with the specified document to review, fix, and verify the implementation until its requirements are met, reporting issues, solutions, and status."

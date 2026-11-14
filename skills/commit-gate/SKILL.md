@@ -52,7 +52,7 @@ If no argument scope is provided, use the normal narrow-scope behavior.
 
 Use `--auto` as explicit authorization to complete the normal commit workflow without asking the user to choose a message or confirm the commit again.
 
-- Inspect the resolved scope and choose the most suitable module, type, and summary using the existing Message Rules and `[module][type]: action summary` format.
+- Inspect the resolved scope and choose the most suitable type, module, and summary using the existing Message Rules and `[type][module]: action summary` format.
 - Show a compact plan with the selected message, commit scope, changelog handling, and relevant exclusions before staging. State that `--auto` selects the primary message and proceeds; omit the choice menu and alternatives.
 - If a matching changelog entry is missing, include its exact proposed text in the plan, then add it as part of the authorized commit. `--auto` does not authorize skipping changelog policy.
 - Stage and commit the planned scope, then provide the Post-Commit Report.
@@ -175,9 +175,9 @@ Use this structure:
 
 Menu:
 0. Cancel
-1. Use message - `[module][fix]: reject files exceeding the size limit`
-2. Use message - `[module][minor]: clarify file size validation errors`
-3. Use message - `[module][refactor]: simplify file size validation`
+1. Use message - `[fix][module]: adjust order validation for stop-loss flow`
+2. Use message - `[minor][module]: refine order validation for stop-loss flow`
+3. Use message - `[refactor][module]: simplify stop-loss validation path`
 ```
 
 Include:
@@ -220,6 +220,7 @@ After approval or automatic selection with `--auto`:
 - re-check that the staged scope still matches the plan;
 - re-check that no `--exclude` path appears in `git diff --cached --name-only`;
 - update the plan if new changes appeared before staging;
+- before `git commit`, verify that the approved message follows `[type][module]: action summary`, with an allowed type in the first bracket and the selected module in the second; if it does not, correct the proposal before proceeding (obtain approval for the corrected message unless `--auto` applies);
 - create the commit with the approved message;
 - provide the Post-Commit Report.
 
@@ -239,30 +240,32 @@ Put the file listing and total in a fenced `text` block to preserve alignment. R
 
 ## Message Rules
 
-Always use this format:
+Always use this format in every mode, including menu alternatives, `--fast`, and `--auto`:
 
 ```text
-[module][type]: action summary
+[type][module]: action summary
 ```
 
+The first bracket MUST contain `type`; the second bracket MUST contain `module`. Never reverse this order. A module or component name must never occupy the first bracket, even when it is the main focus of the change.
+
 Examples:
-- `[uploads][fix]: reject files exceeding the size limit`
-- `[search][feature]: add filtering by category`
-- `[billing][refactor]: simplify invoice total calculation`
-- `[export.service][feature]: add CSV export support`
-- `[docs][docs-update]: document application configuration overrides`
-- `[api][minor]: rename totalCount response field for clarity`
-- `[tests][test]: add coverage for empty search results`
+- `[fix][orders]: correct stop-loss validation for market entry`
+- `[feature][signals]: add breakout confirmation filter`
+- `[refactor][risk]: simplify position sizing calculation`
+- `[feature][trend.service]: add backend trend line extension segment`
+- `[docs-update][docs]: document strategy config overrides`
+- `[minor][api]: rename pnl response field for clarity`
+- `[test][tests]: add coverage for strategy warmup edge cases`
 - `[ci][ci]: run lint before unit tests in pull requests`
-- `[deps][deps]: bump zod to latest supported version`
-- `[cache][perf]: reduce repeated lookups during batch processing`
+- `[deps][deps]: bump ccxt to latest supported version`
+- `[perf][engine]: reduce indicator recomputation in backtest loop`
 - `[build][build]: align tsup output with node runtime target`
-- `[auth][security]: harden token validation for websocket sessions`
+- `[security][auth]: harden token validation for websocket sessions`
 
 ### Message Parts
 
-- `module`: the module, bounded context, package, or top-level area affected by the change, or a component/file name under Module Selection rules;
-- `type`: one of `feature`, `fix`, `refactor`, `minor`, `docs-update`, `test`, `chore`, `perf`, `ci`, `deps`, `build`, `security`;
+- `type` (first bracket): one of `feature`, `fix`, `refactor`, `minor`, `docs-update`, `test`, `chore`, `perf`, `ci`, `deps`, `build`, `security`;
+- `module` (second bracket): the module, bounded context, package, or top-level area affected by the change, or a component/file name under Module Selection rules;
 - `action summary`: a short phrase that states what changed;
 - if useful, extend the action summary with the specific action, flow, endpoint, handler, or scenario that changed.
 
@@ -281,14 +284,14 @@ Use a component or file name in `[module]` only when it identifies the main elem
 
 For file names, prefer the semantic file stem without the extension, for example:
 - `OrderForm.vue` -> `OrderForm`
-- `export.service.ts` -> `export.service`
+- `trend.service.ts` -> `trend.service`
 - `order-validation.handler.ts` -> `order-validation.handler`
 
 When a large change spans several independent parts or is cross-cutting, use a broader module, domain, or area name instead of naming one component or file. If there is no clear semantic focus, also use the broader name.
 
 Examples:
-- Validation fix centered on `OrderForm.vue`, with related tests: `[OrderForm][fix]: correct order amount validation`.
-- Order cancellation support spanning several parts of order processing: `[orders][feature]: add order cancellation support`.
+- Validation fix centered on `OrderForm.vue`, with related tests: `[fix][OrderForm]: correct order amount validation`.
+- Limit-order support spanning several parts of order creation: `[feature][orders]: add limit order support`.
 
 ### Type Selection
 

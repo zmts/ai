@@ -1,0 +1,4 @@
+interface:
+  display_name: "JavaScript / TypeScript Code Quality"
+  short_description: "Review and improve JS/TS quality with KISS and DRY"
+  default_prompt: "Use $javascript-typescript-code-quality to review or improve the selected JavaScript/TypeScript code within the requested scope."
